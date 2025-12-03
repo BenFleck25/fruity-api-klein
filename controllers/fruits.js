@@ -1,4 +1,4 @@
-const Fruit = require("../models/fruit")
+const Fruit = require("../models/Fruit")
 
 // ! INDEX
 const index = async (req, res) => {
