@@ -11,7 +11,7 @@ class Fruit {
     }
 
     static showAll = () => {
-        return fruits.map((fruit) => new Fruit(fruit))
+        return fruits.map(fruit => new Fruit(fruit))
 
     }
     static showOne = (name) => {
@@ -36,7 +36,8 @@ class Fruit {
   }
 
     update(data) {
-        const updatedFruit = fruits.find(fruit => fruit.name.toLowerCase() == this.name.toLowerCase())
+        const updatedFruit = fruits.find((fruit) => fruit.name.toLowerCase() == this.name.toLowerCase())
+        console.log(updatedFruit);
         if(updatedFruit){
             updatedFruit.name = data.name
             return new Fruit(updatedFruit)
@@ -44,16 +45,16 @@ class Fruit {
             throw new Error ("Fruit not found")
         }
     }
-    destroy(data) {
-        const deletedFruit = fruits.find(fruit => fruit.name.toLowerCase() == this.name.toLowerCase())
+    destroy() {
+        const deletedFruit = fruits.find((fruit) => fruit.name.toLowerCase() == this.name.toLowerCase())
         if(deletedFruit){
             const index = fruits.indexOf(deletedFruit)
             fruits.splice(index,1)
-            return deletedFruit
         } else {
             throw new Error ("Fruit not found")
         }
     }
 
 }
+
 module.exports = Fruit
